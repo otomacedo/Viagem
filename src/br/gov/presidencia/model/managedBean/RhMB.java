@@ -69,7 +69,8 @@ public class RhMB implements Serializable {
 		this.rh.setFuncionario(funcionario);
 		Rh gerenciar = rhDAO.consultarPorFuncionario(funcionario);
 		if(gerenciar != null)
-			this.rh = gerenciar;
+			this.rh = gerenciar; 
+		System.out.println("Alterei esse arquivo");
 		return "gerenciar";
 	}
 		
