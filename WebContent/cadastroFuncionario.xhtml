@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:p="http://primefaces.org/ui" >
+
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>CADASTRO</title>
+<h:outputStylesheet library="css"  name="style.css"/>
+</h:head>
+
+<h:body styleClass="body">
+	<p:breadCrumb>
+    <p:menuitem value="Categories" url="menu.xhtml" />
+    <p:menuitem value="MISSÕES" url="missoes.xhtml" />
+    <p:menuitem value="FUNCIONÁRIOS" url="" />
+    <p:menuitem value="ESCALAS" url="#" />
+</p:breadCrumb>
+<div  align="center"><h1> CADASTRO DE FUNCIONÁRIOS </h1>  </div>
+
+<h:form>
+		<h4>FUNCIOÁRIO: </h4>
+	<p:panelGrid columns="4" styleClass="ui-noborder" style="texto" >
+		<f:facet name="header">
+		</f:facet>
+		<p:outputLabel>NOME:</p:outputLabel>	
+		<p:inputText value="#{funcionarioMB.funcionario.nome}"  />
+		<p:outputLabel>NOME DE GUERRA:</p:outputLabel>		
+		<p:inputText value="#{funcionarioMB.funcionario.nomeGuerra}"  />
+		<p:outputLabel>CIDADE: </p:outputLabel>	
+		<p:inputText value="#{funcionarioMB.funcionario.cidade}" />
+		<p:outputLabel>BAIRRO:</p:outputLabel>	
+		<p:inputText value="#{funcionarioMB.funcionario.bairro}"  />
+		<p:outputLabel>DATA DE NASCIMENTO:</p:outputLabel>	
+		<p:calendar value="#{funcionarioMB.funcionario.dtNascimento}" ></p:calendar>
+		<p:outputLabel>RAMAL:</p:outputLabel>	
+		<p:inputText value="#{funcionarioMB.funcionario.ramal}"  />
+		<p:outputLabel>TELEFONE:</p:outputLabel>	
+		<p:inputText value="#{funcionarioMB.funcionario.telefone}"  />
+		
+		
+	</p:panelGrid>
+	<hr style="hr"></hr>
+		<h4  style="h4">DOCUMENTOS: </h4>
+		<p:inputText type="hidden" value="#{funcionarioMB.funcionario.idFuncionario}" />
+		<p:panelGrid  columns="4" styleClass="ui-noborder">
+		<p:outputLabel>RG:</p:outputLabel>	
+		<p:inputText   value="#{funcionarioMB.funcionario.rg}" />
+		<p:outputLabel>CPF:</p:outputLabel>	
+		<p:inputText  value="#{funcionarioMB.funcionario.cpf}" />
+		<p:outputLabel>DATA DE EXPEDIÇÃO RG:</p:outputLabel>	
+		<p:calendar value="#{funcionarioMB.funcionario.dtExpedicaoRg}" ></p:calendar>
+		<p:outputLabel>CNH:</p:outputLabel>	
+		<p:inputText value="#{funcionarioMB.funcionario.cnh}"  />
+		<p:outputLabel>INSCRIÇÃO TITULO:</p:outputLabel>	
+		<p:inputText  value="#{funcionarioMB.funcionario.inscricaoTitulo}" />
+		<p:outputLabel>VALIDADE CNH:</p:outputLabel>	
+		<p:calendar value="#{funcionarioMB.funcionario.validadeCnh}" ></p:calendar>
+		<p:outputLabel>SEÇÃO:</p:outputLabel>	
+		<p:inputText value="#{funcionarioMB.funcionario.secaoTitulo}"  />
+		<p:outputLabel>CATEGORIA CNH:</p:outputLabel>	
+		<p:inputText value="#{funcionarioMB.funcionario.categoriaCnh}" />
+		<p:outputLabel>ZONA:</p:outputLabel>	
+		<p:inputText value="#{funcionarioMB.funcionario.zonaTitulo}" />
+		<p:outputLabel>NÚMERO PASSAPORTE:</p:outputLabel>	
+		<p:inputText value="#{funcionarioMB.funcionario.numPassaporte}"  />
+		<p:outputLabel>DATA EXPEDIÇÃO PASSAPORTE:</p:outputLabel>	
+		<p:calendar value="#{funcionarioMB.funcionario.dtExpedicaoPassaporte}" ></p:calendar>		
+		<p:outputLabel>VALIDADE PASSAPORTE:</p:outputLabel>	
+		<p:calendar value="#{funcionarioMB.funcionario.validadePassaporte}" ></p:calendar>
+
+	
+	</p:panelGrid>
+	
+		<p:growl id="growl" life="2000" />
+		<h:commandButton action="#{funcionarioMB.alterarSalvar()}" value="PRÓXIMO" style="margin-left:1200px;" />
+ </h:form>
+</h:body>
+</html>
+

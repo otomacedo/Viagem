@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:ui="http://java.sun.com/jsf/facelets" >
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+
+<title>LOGIN</title>
+</h:head>
+<h:body>
+	<div align="center"><img src="resources/css/brasao.gif" width="150px" /></div>
+
+	<h3 align="center"  >COTRAN - PRESIDÊNCIA DA REPÚBLICA </h3>
+<div align="center" >
+   <p:panel id="pnlAutenticacao" style="width:800px;">
+                          
+				<h:panelGrid columns="2">
+					<h:outputText value="Login: " />
+					<p:inputText id="txtUsuario" value="" required="true"
+						requiredMessage="Um usuário é necessário para autenticação." />
+					<h:outputText value="Senha: " />
+					<p:password id="txtSenha" value="" required="true"
+						requiredMessage="Você não digitou uma senha." />
+					<h:inputHidden />
+					<p:commandButton value="Login" action="menu.xhtml" />
+				</h:panelGrid>
+			</p:panel>
+                </div>
+</h:body>
+</html>

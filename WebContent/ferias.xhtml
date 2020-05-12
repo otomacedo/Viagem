@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:p="http://primefaces.org/ui" >
+
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>FUNCIONARIOS</title>
+<h:outputStylesheet library="css"  name="style.css"/>
+</h:head>
+
+<h:body styleClass="body">
+<p:breadCrumb>
+    <p:menuitem value="Categories" url="menu" />
+    <p:menuitem value="MISSÕES" url="missoes.xhtml" />
+    <p:menuitem value="FUNCIONÁRIOS" url="#" />
+    <p:menuitem value="ESCALAS" url="#" />
+</p:breadCrumb>
+<div  align="center"><h1>FUNCIONÁRIOS </h1>  </div>
+
+<h:form >
+		<p:dataTable var="funcionario" value="#{funcionarioMB.funcionarios}">
+    
+</p:dataTable>
+
+<h:commandButton action="#{funcionarioMB.listarFuncionarios()}"/>
+<p/>
+
+	  
+        <p:dataTable id="Funcionarios" var="car" value="">
+            <p:column style="width:20px">
+                <h:outputText id="dragIcon" styleClass="ui-icon pi pi-plus" />
+                <p:draggable for="dragIcon" revert="true" helper="clone"/>
+            </p:column>
+ 
+            <p:column headerText="NOME DE GUERRA">
+                <h:outputText value="" />
+            </p:column>
+ 
+            <p:column headerText="RAMAL">
+                <h:outputText value="" />
+            </p:column>
+ 
+            <p:column headerText="SEÇÃO">
+                <h:outputText value="" />
+            </p:column>
+ 
+            <p:column headerText="CPF">
+                <h:outputText value="" />
+            </p:column>
+        </p:dataTable>
+ 
+    
+</h:form>
+</h:body>
+</html>

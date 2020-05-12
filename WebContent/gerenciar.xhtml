@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:p="http://primefaces.org/ui" >
+
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>CADASTRO</title>
+<h:outputStylesheet library="css"  name="style.css"/>
+</h:head>
+
+<h:body styleClass="body">
+	<p:breadCrumb>
+    <p:menuitem value="Categories" url="menu" />
+    <p:menuitem value="MISSÕES" url="missoes.xhtml" />
+    <p:menuitem value="FUNCIONÁRIOS" url="#" />
+    <p:menuitem value="ESCALAS" url="#" />
+</p:breadCrumb>
+<div  align="center"><h1> GERENCIAR FUNCIONÁRIOS </h1>  </div>
+
+<h:form >
+ <p:panelGrid columns="2" styleClass="ui-noborder" >	
+	<p:outputLabel value="NOME:"/>
+		<h:outputText value=" #{rhMB.rh.funcionario.nome}"/>
+	<p:outputLabel value="NOME DE GUERRA:"/>
+		<h:outputText value=" #{rhMB.rh.funcionario.nomeGuerra}"/>
+		<p:inputText type="hidden" value="#{rhMB.rh.idRh}" />
+</p:panelGrid>
+
+<p:panelGrid columns="2" styleClass="ui-noborder" >
+<p:outputLabel value="RAMAL:"/>
+<h:outputText value=" #{rhMB.rh.funcionario.ramal}"/>
+</p:panelGrid>
+	<p:panelGrid columns="4" styleClass="ui-noborder" >	
+		<p:outputLabel for="@next" value="DEPARTAMENTO : " />
+		<p:selectOneMenu converter="departamentoConverter" id="departamento" value="#{rhMB.rh.departamento}">
+			<f:selectItem itemLabel="Selecione" noSelectionOption="true" />
+			<f:selectItems value="#{administrarMB.departamentos}" var="item" itemLabel="#{item.descricao}" itemValue="#{item}" /> 
+		</p:selectOneMenu>
+		
+		<p:outputLabel  for="@next" value="SETOR : " />
+		<p:selectOneMenu converter="setorConverter" id="setor" value="#{rhMB.rh.setor}">
+			<f:selectItem itemLabel="Selecione" noSelectionOption="true" />
+			<f:selectItems value="#{administrarMB.setores}" var="item" itemLabel="#{item.descricao}" itemValue="#{item}" /> 
+		</p:selectOneMenu>
+				
+		<p:outputLabel for="@next" value="ATIVIDADE DESEMPENHADA : " />
+		<p:selectOneMenu converter="atividadeConverter" id="atividade" value="#{rhMB.rh.atividade}" > 
+			<f:selectItem itemLabel="Selecione" noSelectionOption="true" />
+			<f:selectItems value="#{administrarMB.atividades}" var="item" itemLabel="#{item.descricao}" itemValue="#{item}" styleClass="texto"/>
+		</p:selectOneMenu>
+		
+		<p:outputLabel for="@next" value="POSTO / GRADUAÇÃO : " />
+		<p:selectOneMenu converter="graduacaoConverter" id="graduacao" value="#{rhMB.rh.graduacao}"> 
+			<f:selectItem itemLabel="Selecione" noSelectionOption="true" />
+			<f:selectItems value="#{administrarMB.graduacoes}" var="item" itemLabel="#{item.descricao}" itemValue="#{item}"   />
+		</p:selectOneMenu>
+		
+		<p:outputLabel for="@next" value="CARGO / FUNÇÃO / GRATIFICAÇÃO : " />
+		<p:selectOneMenu converter="gratificacaoConverter" id="gratificacao" value="#{rhMB.rh.gratificacao}">
+			<f:selectItem itemLabel="Selecione" noSelectionOption="true" />
+			<f:selectItems value="#{administrarMB.gratificacoes}" var="item" itemLabel="#{item.descricao}" itemValue="#{item}" /> 
+		</p:selectOneMenu>
+	
+	</p:panelGrid>
+	
+		<p:growl id="growl" life="2000" />
+		<h:commandButton action="#{rhMB.alterarSalvar()}" value="Salvar" style="margin-left:1200px;" />
+ </h:form>
+
+</h:body>
+</html>
+
