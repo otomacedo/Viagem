@@ -21,7 +21,6 @@ public class RhMB implements Serializable {
 	private Rh rh = new Rh();
 	private RhDAO rhDAO;
 	
-	
 	public RhMB() {
 		rhDAO = new RhDAO();
 		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
